@@ -1,7 +1,7 @@
 FROM ubuntu:trusty
 
 RUN apt-get update &&\
-    apt-get install -y git-core subversion build-essential gcc-multilib \
+    apt-get install -y git-core subversion build-essential gcc-multilib ccache \
                        libncurses5-dev zlib1g-dev gawk flex gettext wget unzip python &&\
     apt-get clean &&\
     useradd -m openwrt &&\
