@@ -1,8 +1,8 @@
 FROM ubuntu:trusty
 
-RUN apt-get update -qq && \
-    apt-get install -y -q git-core subversion build-essential gcc-multilib ccache \
-                       libncurses5-dev zlib1g-dev gawk flex gettext wget unzip python && \
+RUN apt-get update && \
+    apt-get install -y git-core subversion build-essential gcc-multilib ccache \
+                       libncurses5-dev zlib1g-dev gawk flex gettext wget unzip python vim && \
     apt-get clean && \
     useradd -m openwrt && \
     echo 'openwrt ALL=NOPASSWD: ALL' > /etc/sudoers.d/openwrt
