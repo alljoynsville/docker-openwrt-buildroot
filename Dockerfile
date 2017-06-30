@@ -7,6 +7,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -qq update && \
     useradd -m openwrt && \
     echo 'openwrt ALL=NOPASSWD: ALL' > /etc/sudoers.d/openwrt
 USER openwrt
+RUN cd /home/openwrt && \
+    git clone git://git.openwrt.org/15.05/openwrt.git && \
+    cd openwrt && \
+    ./scripts/feeds update && \
+    rm -rf tmp .config .config.old
 WORKDIR /home/openwrt/openwrt
-RUN git clone git://git.openwrt.org/15.05/openwrt.git && cd openwrt && \
-./scripts/feeds update && rm -rf tmp .config .config.old
