@@ -11,7 +11,7 @@ USER openwrt
 RUN cd /home/openwrt && \
     git clone --depth 1 --branch v18.06.0 https://git.openwrt.org/openwrt/openwrt.git openwrt && \
     cd openwrt && \
-    ./scripts/feeds update && \
+    ./scripts/feeds update -a && \
     rm -rf tmp
 
 WORKDIR /home/openwrt/openwrt
