@@ -13,3 +13,12 @@ or
 docker run -t -i alljoynsville/openwrt-builder:15.05 bash
 ```
 
+and then
+```sh
+cd /home/openwrt/openwrt
+./scripts/feeds update -a
+./scripts/feeds install -a
+
+make defconfig
+make
+```
