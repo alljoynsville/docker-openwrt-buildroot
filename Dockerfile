@@ -9,7 +9,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -qq update && \
     echo 'openwrt ALL=NOPASSWD: ALL' > /etc/sudoers.d/openwrt
 USER openwrt
 RUN cd /home/openwrt && \
-    git clone --depth 1 --branch v18.06.0 https://git.openwrt.org/openwrt/openwrt.git openwrt && \
+    git clone --depth 1 --branch v18.06.1 https://git.openwrt.org/openwrt/openwrt.git openwrt && \
     cd openwrt && \
     ./scripts/feeds update -a && \
     rm -rf tmp
